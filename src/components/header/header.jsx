@@ -3,7 +3,9 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 
 import "./header.css";
 
-const Header = () => {
+const Header = ({ menu }) => {
+  const data = menu?.allContentfulMenu?.nodes;
+  console.log("data :>> ", data);
   return (
     <div className='hearde'>
       <Navbar bg='light' expand='lg'>
@@ -12,14 +14,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
-              <Nav.Link href='#home'>Home</Nav.Link>
-              <Nav.Link href='#link'>About</Nav.Link>
-              <Nav.Link href='#link'>Services</Nav.Link>
-              <Nav.Link href='#link'>Team</Nav.Link>
-              <Nav.Link href='#link'>Works</Nav.Link>
-              <Nav.Link href='#link'>Prices</Nav.Link>
-              <Nav.Link href='#link'>Subscribe</Nav.Link>
-              <Nav.Link href='#link'>Contact</Nav.Link>
+              {data.map((el) => {
+                return <Nav.Link href='#home'>{el?.navBar}</Nav.Link>;
+              })}
             </Nav>
           </Navbar.Collapse>
         </Container>
