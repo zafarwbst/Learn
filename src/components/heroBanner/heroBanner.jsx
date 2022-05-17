@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import "./HeroBanner.css";
+import "./heroBanner.css";
 
 import Slide1 from "../assets/bannerBg.jpg";
 
