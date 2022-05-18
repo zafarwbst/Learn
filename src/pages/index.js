@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/header/header";
 import { graphql } from 'gatsby'
 import HeroBanner from "../components/heroBanner/heroBanner";
+import Brands from "../components/brands/brands";
 
 const IndexPage = ({ data }) => {
   return (
@@ -10,6 +11,7 @@ const IndexPage = ({ data }) => {
       <div className='home'>
         <Header menu={data} />
         <HeroBanner bnr={data}/>
+        <Brands brand={data}/>
       </div>
     </>
   );
@@ -34,6 +36,15 @@ export const query = graphql`
         }
         heroDiscription
         heroHeading
+      }
+    }
+    allContentfulBrands {
+      nodes {
+        brandsImage {
+          file {
+            url
+          }
+        }
       }
     }
   }

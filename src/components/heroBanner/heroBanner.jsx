@@ -1,8 +1,6 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Container } from "react-bootstrap";
 import "./heroBanner.css";
-
-import Slide1 from "../assets/bannerBg.jpg";
 
 const HeroBanner = ({ bnr }) => {
   const data = bnr?.allContentfulHeroBanner?.nodes[0];
@@ -17,10 +15,12 @@ const HeroBanner = ({ bnr }) => {
             src={data?.heroImage?.file?.url}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <h3>{data?.heroHeading}</h3>
-            <p>{data?.heroDiscription}</p>
-          </Carousel.Caption>
+          <Container>
+            <Carousel.Caption>
+              <h3>{data?.heroHeading}</h3>
+              <p>{data?.heroDiscription}</p>
+            </Carousel.Caption>
+          </Container>
         </Carousel.Item>
         <Carousel.Item>
           <img
@@ -28,20 +28,12 @@ const HeroBanner = ({ bnr }) => {
             src={data?.heroImage?.file?.url}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <h3>{data?.heroHeading}</h3>
-            <p>{data?.heroDiscription}</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={Slide1} alt="Third slide" />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
+          <Container>
+            <Carousel.Caption>
+              <h3>{data?.heroHeading}</h3>
+              <p>{data?.heroDiscription}</p>
+            </Carousel.Caption>
+          </Container>
         </Carousel.Item>
       </Carousel>
     </div>
